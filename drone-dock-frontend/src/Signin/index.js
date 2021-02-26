@@ -1,5 +1,6 @@
 import React from 'react'
 import {Container, FormWrap, Icon, FormContent, Form, FormH1, FormLabel, FormInput, FormButton, Text } from './SigninElements';
+// import { Link as LinkR } from 'react-router-dom'
 
 const SignIn = () => {
     return (
@@ -14,7 +15,9 @@ const SignIn = () => {
                             <FormInput type='email' required />
                             <FormLabel htmlFor='for'>Password</FormLabel>
                             <FormInput type='password' required />
-                            <FormButton type='submit'>Continue</FormButton>
+                            <FormButton type='submit'>Continue
+                                {/* <LinkR to="/videos">Continue</LinkR> */}
+                            </FormButton>
                             <Text>Forgot password</Text>
                         </Form>
                     </FormContent>
