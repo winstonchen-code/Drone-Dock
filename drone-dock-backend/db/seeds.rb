@@ -15,9 +15,9 @@ User.create(username: "winston", password: "123", bio: "student", image: "")
 User.create(username: "tommy", password: "123", bio: "student", image: "")
 User.create(username: "kelly", password: "123", bio: "student", image: "")
 
-FootageLog.create(date: Date.new(2021, 1, 21), location: "Virginia", user_id: User.all.sample.id)
-FootageLog.create(date: Date.new(2022, 2, 23), location: "Texas", user_id: User.all.sample.id)
-FootageLog.create(date: Date.new(2023, 3, 23), location: "California", user_id: User.all.sample.id)
+FootageLog.create(date: Date.new(2021, 1, 21), location: "Virginia", user_id: User.first.id)
+FootageLog.create(date: Date.new(2022, 2, 23), location: "Texas", user_id: User.first.id)
+FootageLog.create(date: Date.new(2023, 3, 23), location: "California", user_id: User.first.id)
 
 Video.create(url: "hi", description: "Fun", footage_log_id: FootageLog.all.sample.id)
 Video.create(url: "hi1", description: "Fun1", footage_log_id: FootageLog.all.sample.id)

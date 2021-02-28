@@ -12,8 +12,8 @@ export const Container = styled.div`
     overflow: hidden;
     background: linear-gradient(
         108deg,
-        rgba(6, 9, 177, 1) 0%,
-        rgba(10, 21, 200, 1) 100%
+        rgba(0, 119, 182, 1) 0%,
+        rgba(5, 160, 200, 1) 100%
     );
 `
 export const FormWrap = styled.div`
@@ -54,8 +54,8 @@ export const FormContent = styled.div`
 
 export const Form = styled.form`
     background: #010101;
-    max-width: 400px;
-    max-height: 500px;
+    max-width: 800px;
+    max-height: 600px;
     width: 100%;
     z-index: 1;
     display: grid;
@@ -91,7 +91,7 @@ export const FormInput = styled.input`
 `
 
 export const FormButton = styled.button`
-    background: #0609B1;
+    background: #0077B6;
     padding: 16px 0;
     border: none;
     border-radius: 4px;

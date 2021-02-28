@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const Section = styled.section`
-    background-color: black;
+    background-color: #00B4D8;
     min-height: 550px;
     padding: 100px 0;
     color: #fff;

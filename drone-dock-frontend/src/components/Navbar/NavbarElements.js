@@ -73,7 +73,7 @@ export const NavItem = styled.li`
     height: 80px;
 `
 
-export const NavLinks = styled(LinkS)`
+export const NavLinks = styled(LinkR)`
     color: #fff;
     display: flex;
     align-items: center;
@@ -98,10 +98,10 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(LinkR)`
     border-radius: 50px;
-    background: #01bf71;
+    background: #0609B1;
     white-space: nowrap;
     padding: 10px 22px;
-    color: #010606;
+    color: white;
     font-size: 16px;
     outline: none;
     border: none;

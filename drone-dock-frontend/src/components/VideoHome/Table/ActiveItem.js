@@ -8,7 +8,7 @@ const Button = styled.a`
     font-weight: bold;
     cursor: pointer;
     border-radius: 0;
-    background: red;
+    background: #00B4D8;
     padding: 10px 20px;
     font-size: 18px;
 `
