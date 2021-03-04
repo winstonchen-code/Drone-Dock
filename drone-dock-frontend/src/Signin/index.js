@@ -5,7 +5,7 @@ import {Container, FormWrap, Icon, FormContent, Form, FormH1, FormLabel, FormInp
 const SignIn = ( {setUser} ) => {
 
     const [formData, setFormData] = useState({
-        username: "",
+        email: "",
         password: "",
     })
 
@@ -16,7 +16,11 @@ const SignIn = ( {setUser} ) => {
     function handleSubmit(e) {
         e.preventDefault();
         fetch("http://localhost:3000/login", {
-            method: "POST"
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
         })
             .then(r => r.json())
             .then(user => {
@@ -34,7 +38,7 @@ const SignIn = ( {setUser} ) => {
                         <Form action="#" onSubmit={handleSubmit}>
                             <FormH1>Sign in to your account</FormH1>
                             <FormLabel htmlFor='for'>Email</FormLabel>
-                            <FormInput type='email' required placeholder="username" name="username" value={formData.username} onChange={handleChange}/>
+                            <FormInput type='email' required placeholder="email" name="email" value={formData.email} onChange={handleChange}/>
                             <FormLabel htmlFor='for'>Password</FormLabel>
                             <FormInput type='password' required placeholder="password" name="password" value={formData.password} onChange={handleChange}/>
                             <FormButton type='submit'>Continue

@@ -7,10 +7,12 @@ import VideoHome from './components/VideoHome/VideoHome'
 import React, { useEffect, useState } from 'react'
 import Navbar from './components/Navbar';
 import Profile from './components/Profile/Profile';
-import Locations from './components/Locations/Locations';
+import FootageLogs from './components/FootageLogs/FootageLogs';
+import Footer from './components/Footer';
 
 function App() {
   const [user, setUser] = useState(null);
+  const [footageLogs, setFootageLogs] = useState([]);
 
   console.log(user);
 
@@ -19,6 +21,7 @@ function App() {
       .then((r) => r.json())
       .then((user) => {
         setUser(user);
+        setFootageLogs(user.footage_logs)
       })
   }, []);
 
@@ -31,17 +34,19 @@ function App() {
             <SigninPage setUser={setUser} />
           </Route>
           {/* <Route path="/signin" component={SigninPage} exact /> */}
-          <Route path="/videos">
-            <VideoHome user={user} />
-          </Route>
-          {/* <Route path="/videos" component={VideoHome} exact /> */}
+
+          {/* <Route path="/footagelogs/:id">
+            <VideoHome />
+          </Route> */}
+          <Route exact path="/footagelogs/:id" component={VideoHome} exact />
           <Route path="/profile">
             {user ? ( <Profile user={user} setUser={setUser} /> ) : ( <h1> You must be logged in to view this page! </h1> )}
           </Route>
-          <Route path="/locations">
-            {user ? ( <Locations user={user} /> ) : ( <h1> You must be logged in to view this page! </h1> )}
+          <Route path="/footagelogs">
+            {user ? ( <FootageLogs user={user} footageLogs={footageLogs} setFootageLogs={setFootageLogs}  /> ) : ( <h1> You must be logged in to view this page! </h1> )}
           </Route>
       </Switch>
+      <Footer/>
     </Router>
   );
 }

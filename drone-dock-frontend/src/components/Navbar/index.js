@@ -18,7 +18,7 @@ const Navbar = ({ toggle, user }) => {
                                 <NavLinks to="/profile">Profile</NavLinks>
                             </NavItem>
                             <NavItem>
-                                <NavLinks to="/locations">Portfolio</NavLinks>
+                                <NavLinks to="/footagelogs">Portfolio</NavLinks>
                             </NavItem>
                             </>
                         ) : (

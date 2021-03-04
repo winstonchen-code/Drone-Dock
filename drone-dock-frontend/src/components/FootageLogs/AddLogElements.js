@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-    min-height: 1000px;
+    min-height: 100px;
     position: none;
     bottom: 0;
     left: 0;
@@ -10,11 +10,7 @@ export const Container = styled.div`
     top: 0;
     z-index: 0;
     overflow: hidden;
-    background: linear-gradient(
-        108deg,
-        rgba(0, 119, 182, 1) 0%,
-        rgba(5, 160, 200, 1) 100%
-    );
+    
 `
 export const FormWrap = styled.div`
     height: 90%;
@@ -54,8 +50,8 @@ export const FormContent = styled.div`
 
 export const Form = styled.form`
     background: #010101;
-    max-width: 800px;
-    max-height: 1100px;
+    max-width: 300px;
+    max-height: 500px;
     width: 100%;
     z-index: 1;
     display: grid;
@@ -63,6 +59,7 @@ export const Form = styled.form`
     padding: 40px 32px;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+    text-align: center;
 
     @media screen and (max-width: 400px){
         padding: 32px 32px;
@@ -78,21 +75,23 @@ export const FormH1 = styled.h1`
 `
 
 export const FormLabel = styled.label`
-    margin-bottom: 8px;
+    text-align: left; 
+    margin-bottom: 10px;
     font-size: 14px;
     color: #fff;
 `
 
 export const FormInput = styled.input`
-    padding: 5px 16px;
-    margin-bottom: 32px;
+    padding: 5px 1px 5px 1px;
+    margin-bottom: 10px;
     border: none;
     border-radius: 4px;
 `
 
 export const FormButton = styled.button`
+    margin-top: 10px;
     background: #0077B6;
-    padding: 16px 0;
+    padding: 5px 0;
     border: none;
     border-radius: 4px;
     color: #fff;

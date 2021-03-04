@@ -11,13 +11,19 @@ FootageLog.destroy_all
 Video.destroy_all
 
 
-User.create(username: "winston", password: "123", bio: "student", image: "")
-User.create(username: "tommy", password: "123", bio: "student", image: "")
-User.create(username: "kelly", password: "123", bio: "student", image: "")
+User.create(name: "Winston", bio: "student", image: "", email: "winston@winston.com", password: "123")
+User.create(name: "Tommy", bio: "student", image: "", email: "tommy@tommy.com", password: "123")
+User.create(name: "Kelly", bio: "student", image: "", email: "kelly@kelly.com", password: "123")
 
-FootageLog.create(date: Date.new(2021, 1, 21), location: "Virginia", user_id: User.first.id)
-FootageLog.create(date: Date.new(2022, 2, 23), location: "Texas", user_id: User.first.id)
-FootageLog.create(date: Date.new(2023, 3, 23), location: "California", user_id: User.first.id)
+FootageLog.create(name: "Burke Lake", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "Virginia", date: Date.new(2021, 1, 21), user_id: User.first.id)
+FootageLog.create(name: "Second Try", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "DC", date: Date.new(2022, 2, 22), user_id: User.first.id)
+FootageLog.create(name: "Third Try", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "Texas", date: Date.new(2023, 3, 23), user_id: User.first.id)
+FootageLog.create(name: "Fourth Try", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "California", date: Date.new(2024, 4, 24), user_id: User.first.id)
+FootageLog.create(name: "Fourth Try", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "California", date: Date.new(2024, 4, 24), user_id: User.first.id)
+FootageLog.create(name: "Fourth Try", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "California", date: Date.new(2024, 4, 24), user_id: User.first.id)
+FootageLog.create(name: "Fourth Try", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "California", date: Date.new(2024, 4, 24), user_id: User.first.id)
+FootageLog.create(name: "Fourth Try", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "California", date: Date.new(2024, 4, 24), user_id: User.first.id)
+
 
 Video.create(url: "hi", description: "Fun", footage_log_id: FootageLog.all.sample.id)
 Video.create(url: "hi1", description: "Fun1", footage_log_id: FootageLog.all.sample.id)

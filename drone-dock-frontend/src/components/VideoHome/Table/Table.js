@@ -7,21 +7,22 @@ class Table extends Component {
         super(props)
     }
     render(){
-        const items = this.props.course_modules.map ( (data) => {
-            let handleVideoChange = this.props.handleVideoChange.bind(this, data)
+        const items = this.props.videos.map ( (data) => {
+            // let handleVideoChange = this.props.handleVideoChange.bind(this, data)
 
             return (
                 data.active ?
-                <ActiveItem handleVideoChange={handleVideoChange} key={data.id} title={data.title} description={data.description} /> :
-                <Item handleVideoChange={handleVideoChange} key={data.id} title={data.title} description={data.description} />
+                <ActiveItem key={data.id} title={data.title} description={data.description} /> :
+                <Item key={data.id} title={data.title} description={data.description} />
             )
         })
 
+        // handleVideoChange={handleVideoChange} 
         return(
             <div className="pt-5 pb-5">
                 <div casssName="container">
                     <div className="text-center">
-                        <h2 className="pt-4 pb-4">React for raild -videos</h2>
+                        <h2 className="pt-4 pb-4">Your Videos</h2>
                     </div>
                     {items}
                 </div>
