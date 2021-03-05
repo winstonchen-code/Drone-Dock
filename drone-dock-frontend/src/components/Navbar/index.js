@@ -1,8 +1,18 @@
 import React from 'react'
 import {FaBars} from 'react-icons/fa'
-import {Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from'./NavbarElements';
+import {Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink, Nav1} from'./NavbarElements';
+import { useHistory } from "react-router-dom"
 
-const Navbar = ({ toggle, user }) => {
+const Navbar = ({ toggle, user, setUser }) => {
+
+    const history = useHistory()
+
+    function logout() {
+        localStorage.removeItem("token")
+        setUser(null);
+        history.push("/");
+    }
+
     return (
         <>
             <Nav>
@@ -37,8 +47,8 @@ const Navbar = ({ toggle, user }) => {
                     </NavMenu>
                     
                     {user ? (
-                        <NavBtn>
-                            <NavBtnLink to="/signin">Log Out</NavBtnLink>
+                        <NavBtn onClick={logout}>
+                            <Nav1>Log Out</Nav1>
                         </NavBtn>
                     ) : (
                         <NavBtn>

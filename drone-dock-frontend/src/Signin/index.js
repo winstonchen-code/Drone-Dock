@@ -34,14 +34,16 @@ const SignIn = ( {setUser, setFootageLogs} ) => {
                     throw data
                 }
             }))
-            .then((user) => {
+            .then((data) => {
                 // console.log(user)
                 // if (data.errors) {
                 //     setErrors(data.errors);
                 // } else {
+                    const { user, token } = data;
+                    localStorage.setItem("token", token);
                     setUser(user);
                     setFootageLogs(user.footage_logs);
-                    history.push("/profile");
+                    history.push("/footagelogs");
             })
             .catch(error => {
                 setErrors(error.errors)

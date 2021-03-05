@@ -5,7 +5,10 @@ class UsersController < ApplicationController
         
         user = User.find_by(email: params[:email])
         if user && user.authenticate(params[:password])
-            render json: user.to_json({include: [:footage_logs => {:include => [:videos]}], except: [:created_at, :updated_at]})
+            token = JWT.encode({ user_id: user.id }, 'my_secret', 'HS256')
+            # render json: user.to_json({include: [:footage_logs => {:include => [:videos]}], except: [:created_at, :updated_at]})
+            render json: { user: UserSerializer.new(user), token: token }
+
         else 
             render json: { errors: ["Invalid email or password"] }, status: :unauthorized
         end 
@@ -14,7 +17,9 @@ class UsersController < ApplicationController
     def signup
         user = User.create(user_params)
         if user.valid?
-            render json: user, status: :created
+            # render json: user, status: :created
+            token = JWT.encode({ user_id: user.id }, 'my_secret', 'HS256')
+            render json: { user: UserSerializer.new(user), token: token }
         else 
             render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
         end
@@ -41,7 +46,7 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        # params.required(:user).permit(:name, :image, :bio, :email)
-        params.permit(:name, :image, :bio, :email)
+        # params.required(:user).permit(:name, :password, :image, :bio, :email)
+        params.permit(:name, :password, :image, :bio, :email)
     end
 end

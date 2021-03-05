@@ -116,3 +116,24 @@ export const NavBtnLink = styled(LinkR)`
         color: #010606;
     }
 `
+
+export const Nav1 = styled.div`
+    border-radius: 50px;
+    background: blue;
+    // background: #0609B1;
+    white-space: nowrap;
+    padding: 10px 22px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-deoration: none;
+
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        background: #fff;
+        color: #010606;
+    }
+`

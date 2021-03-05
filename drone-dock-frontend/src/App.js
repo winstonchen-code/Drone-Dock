@@ -18,24 +18,30 @@ function App() {
   console.log(user);
 
   useEffect(() => {
-    // fetch("http://localhost:3000/me")
-    //   .then((r) => r.json())
-    //   .then((user) => {
-    //     setUser(user);
-    //     setFootageLogs(user.footage_logs)
-    //   })
+    const token = localStorage.getItem("token");
+    fetch("http://localhost:3000/me", {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+    },
+    })
+      .then((r) => r.json())
+      .then((user) => {
+        setUser(user);
+        setFootageLogs(user.footage_logs)
+      })
   }, []);
 
   return (
     <Router>
-      <Navbar user={user}/>
+      <Navbar user={user} setUser={setUser} />
       <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/signin">
             <SigninPage setUser={setUser} setFootageLogs={setFootageLogs} />
           </Route>
           <Route path="/signup">
-            <Signup /> 
+            <Signup setUser={setUser} setFootageLogs={setFootageLogs} /> 
           </Route>
           {/* <Route path="/signin" component={SigninPage} exact /> */}
 
