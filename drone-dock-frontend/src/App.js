@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Profile from './components/Profile/Profile';
 import FootageLogs from './components/FootageLogs/FootageLogs';
 import Footer from './components/Footer';
+import Signup from './Signup/Signup'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -17,12 +18,12 @@ function App() {
   console.log(user);
 
   useEffect(() => {
-    fetch("http://localhost:3000/me")
-      .then((r) => r.json())
-      .then((user) => {
-        setUser(user);
-        setFootageLogs(user.footage_logs)
-      })
+    // fetch("http://localhost:3000/me")
+    //   .then((r) => r.json())
+    //   .then((user) => {
+    //     setUser(user);
+    //     setFootageLogs(user.footage_logs)
+    //   })
   }, []);
 
   return (
@@ -31,7 +32,10 @@ function App() {
       <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/signin">
-            <SigninPage setUser={setUser} />
+            <SigninPage setUser={setUser} setFootageLogs={setFootageLogs} />
+          </Route>
+          <Route path="/signup">
+            <Signup /> 
           </Route>
           {/* <Route path="/signin" component={SigninPage} exact /> */}
 

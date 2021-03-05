@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   post "/login", to: "users#login"
   get "/me", to: "users#me"
   patch "/me", to: "users#update"
+  post "/signup", to: "users#signup"
 
 
   post "/footage_logs", to: 'footage_logs#create'

@@ -27,12 +27,11 @@ const Footer = () => {
                     </FooterLinksWrapper>
                     <FooterLinksWrapper>
                         <FooterLinkItems>
-                            <FooterLinkTitle>About Us</FooterLinkTitle>
-                                <FooterLink to="/signin">How it works</FooterLink>
-                                <FooterLink to="/signin">Testimonials</FooterLink>
-                                <FooterLink to="/signin">Careers</FooterLink>
-                                <FooterLink to="/signin">Investors</FooterLink>
-                                <FooterLink to="/signin">Terms of Service</FooterLink>    
+                            <FooterLinkTitle>Videos</FooterLinkTitle>
+                                <FooterLink to="/signin">Submit Feature Video</FooterLink>
+                                <FooterLink to="/signin">Drone Loggers</FooterLink>
+                                <FooterLink to="/signin">Search Video Locations</FooterLink>
+                                <FooterLink to="/signin">Review Videos</FooterLink>
                         </FooterLinkItems>
                         <FooterLinkItems>
                             <FooterLinkTitle>Social Media</FooterLinkTitle>

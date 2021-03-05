@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
 import {Container, FormWrap, Icon, FormContent, Form, FormH1, FormLabel, FormInput, FormButton, Text } from './SigninElements';
 // import { Link as LinkR } from 'react-router-dom'
+import { useHistory } from "react-router-dom"
 
-const SignIn = ( {setUser} ) => {
+const SignIn = ( {setUser, setFootageLogs} ) => {
 
     const [formData, setFormData] = useState({
         email: "",
         password: "",
     })
+    const [errors, setErrors] = useState([])
+    const history = useHistory()
+
+    console.log(errors);
 
     function handleChange(e) {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,11 +27,26 @@ const SignIn = ( {setUser} ) => {
             },
             body: JSON.stringify(formData)
         })
-            .then(r => r.json())
-            .then(user => {
+            .then(r => r.json().then(data => {
+                if (r.ok) {
+                    return data
+                } else {
+                    throw data
+                }
+            }))
+            .then((user) => {
                 // console.log(user)
-                setUser(user);
+                // if (data.errors) {
+                //     setErrors(data.errors);
+                // } else {
+                    setUser(user);
+                    setFootageLogs(user.footage_logs);
+                    history.push("/profile");
             })
+            .catch(error => {
+                setErrors(error.errors)
+            })
+            
     }
 
     return (
@@ -41,6 +61,7 @@ const SignIn = ( {setUser} ) => {
                             <FormInput type='email' required placeholder="email" name="email" value={formData.email} onChange={handleChange}/>
                             <FormLabel htmlFor='for'>Password</FormLabel>
                             <FormInput type='password' required placeholder="password" name="password" value={formData.password} onChange={handleChange}/>
+                            {errors.map(error => <p style={{color: "red" }} key={error}>{error}</p>)}
                             <FormButton type='submit'>Continue
                                 {/* <LinkR to="/videos">Continue</LinkR> */}
                             </FormButton>

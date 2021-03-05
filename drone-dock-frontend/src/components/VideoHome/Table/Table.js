@@ -12,8 +12,8 @@ class Table extends Component {
 
             return (
                 data.active ?
-                <ActiveItem key={data.id} title={data.title} description={data.description} /> :
-                <Item key={data.id} title={data.title} description={data.description} />
+                <ActiveItem key={data.id} url={data.url} description={data.description} /> :
+                <Item key={data.id} url={data.url} description={data.description} />
             )
         })
 
