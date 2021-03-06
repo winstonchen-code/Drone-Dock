@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 // import {MdKeyboardArrowRight, MdArrowForward} from 'react-icons/md'
+import { Link as LinkR } from 'react-router-dom'
+
 
 export const HeroContainer = styled.div`
     background: #0c0c0c;
@@ -41,25 +43,31 @@ export const HeroContent = styled.div`
 `
 
 export const HeroH1 = styled.h1`
-    color: black;
-    font-size: 60px;
+    color: #fff;
+    font-size: 70px;
+    margin-top: -100px;
+    font-weight: bold;
     text-align: center;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
         font-size: 40px;
     }
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 1000px) {
         font-size: 32px;
     }
 `
 
 export const HeroP =styled.p`
-    margin-top: 24px;
-    color: black;
-    font-size; 24px;
-    text-aign: center;
-    max-width: 600px;
+    margin-top: 8px;
+    color: #fff;
+    font-size: 32px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    // margin-top: 24px;
+    // color: black;
+    // font-size; 24px;
+    // text-aign: center;
+    // max-width: 600px;
 
     @media screen and (max-width: 768px) {
         font-size: 23px;
@@ -75,6 +83,8 @@ export const HeroBtnWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    display: block;
+    text-decoration: none;
 `
 
 // export const ArrowForward = styled(MdArrowForward)`
@@ -86,3 +96,7 @@ export const HeroBtnWrapper = styled.div`
 //     margin-left: 8px;
 //     font-size: 20px;
 // `
+
+export const NavBtnLink = styled(LinkR)`
+    color: white;
+`

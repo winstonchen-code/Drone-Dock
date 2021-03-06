@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import Video from '../../videos/video.mp4'
-import { HeroContainer, HeroBg, VideoBg, HeroContent, HeroH1, HeroP, HeroBtnWrapper} from './HeroElements'
+import { HeroContainer, HeroBg, VideoBg, HeroContent, HeroH1, HeroP, HeroBtnWrapper, NavBtnLink} from './HeroElements'
 import { Button } from '../ButtonElement'
 import ScrollToTop from '../ScrollToTop'
+
+
 
 const HeroSection = () => {
     const [hover, setHover] = useState(false)
@@ -18,13 +20,17 @@ const HeroSection = () => {
                 <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
             </HeroBg>
             <HeroContent>
-                <HeroH1>Drone Content Reimagined</HeroH1>
+                <HeroH1>DRONE CONTENT REIMAGINED</HeroH1>
                 <HeroP>
-                    Sign up for a new account today and start sharing your drone footage
+                    Sign up for a new account today and start your portfolio!
                 </HeroP>
                 <HeroBtnWrapper>
-                    <Button to="signup" onMouseEnter={onHover} onMouseLeave={onHover}>
-                        Get started {hover ? <arrowForward /> : <arrowRight />}
+                    {/* <Button to="signup" onMouseEnter={onHover} onMouseLeave={onHover}> */}
+                        {/* Get started {hover ? <arrowForward /> : <arrowRight />} */}
+                        {/* <NavBtnLink to="/signup">Get Started</NavBtnLink> */}
+                    {/* </Button> */}
+                    <Button to="/signup">
+                        Get Started 
                     </Button>
                 </HeroBtnWrapper>
             </HeroContent>

@@ -38,15 +38,30 @@ class UsersController < ApplicationController
         render json: @current_user.to_json({include: [:footage_logs => {:include => [:videos]}], except: [:created_at, :updated_at]})
     end
 
+    def index
+        render json: User.all.to_json
+    end
+
+    def show
+        user = User.find(params[:id])
+        render json: user.to_json
+    end 
+
     def update 
         # user = User.first
         @current_user.update(user_params)
         render json: @current_user
     end
 
+    def destroy
+        user = User.find_by(id: params[:id])
+        # footage_log = FootageLog.find(params[:id])
+        user.destroy
+    end
+
     private
     def user_params
         # params.required(:user).permit(:name, :password, :image, :bio, :email)
-        params.permit(:name, :password, :image, :bio, :email)
+        params.permit(:id, :name, :password, :image, :bio, :email)
     end
 end

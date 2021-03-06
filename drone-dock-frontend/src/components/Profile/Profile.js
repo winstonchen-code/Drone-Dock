@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import ScrollToTop from '../ScrollToTop';
 import {Container, FormWrap, Icon, FormContent, Form, FormH1, FormLabel, FormInput, FormButton, Text, LocationImage } from './ProfileElements';
 // import { Link as LinkR } from 'react-router-dom'
+import { useHistory } from "react-router-dom"
+
 
 const Profile = ( { user, setUser } ) => {
 
@@ -12,6 +14,9 @@ const Profile = ( { user, setUser } ) => {
         image: user.image,
         bio: user.bio,
     })
+
+    const history = useHistory()
+
 
     function handleChange(e) {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -42,6 +47,14 @@ const Profile = ( { user, setUser } ) => {
     //     })
     // }
 
+    const deleteUser = (id) => {
+        console.log(id)
+        fetch(`http://localhost:3000/users/${id}`, {method: "DELETE"})
+        localStorage.removeItem("token");
+        setUser(null);
+        history.push("/");
+    }
+
     const { name, username, password, image, bio } = formData;
 
     return (
@@ -70,7 +83,7 @@ const Profile = ( { user, setUser } ) => {
                                 {/* <LinkR to="/videos">Continue</LinkR> */}
                             </FormButton>
                             <br></br>
-                            <FormButton type='submit'>Delete Account</FormButton>
+                            <FormButton onClick={() => deleteUser(user.id)}>Delete Account</FormButton>
                         </Form>
                     </FormContent>
                 </FormWrap>

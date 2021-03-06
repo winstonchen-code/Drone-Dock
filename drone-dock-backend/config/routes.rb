@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get "/me", to: "users#me"
   patch "/me", to: "users#update"
   post "/signup", to: "users#signup"
+  get '/users/:id', to: 'users#show' 
+  get '/users', to: 'users#index' 
+  delete '/users/:id', to: 'users#destroy'
 
 
   post "/footage_logs", to: 'footage_logs#create'

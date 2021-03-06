@@ -8,7 +8,7 @@ const Navbar = ({ toggle, user, setUser }) => {
     const history = useHistory()
 
     function logout() {
-        localStorage.removeItem("token")
+        localStorage.removeItem("token");
         setUser(null);
         history.push("/");
     }
