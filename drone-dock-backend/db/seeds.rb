@@ -11,18 +11,18 @@ FootageLog.destroy_all
 Video.destroy_all
 
 
-User.create(name: "Winston", bio: "student", image: "", email: "winston@winston.com", password: "123")
-User.create(name: "Tommy", bio: "student", image: "", email: "tommy@tommy.com", password: "123")
-User.create(name: "Kelly", bio: "student", image: "", email: "kelly@kelly.com", password: "123")
+User.create(name: "Winston", bio: "Karma Drone owner. Passionate about drone videography and specialize in natural landscapes.", image: "https://www.backscatter.com/ITEM_IMAGES/gp-qkwxx-006_1.jpg?resizeid=6&resizeh=600&resizew=600", email: "winston@gmail.com", password: "123")
+User.create(name: "Tommy", bio: "Flation School student studying SE. Mavic owner that enjoys bringing my drone to the beach!", image: "https://cdn.vox-cdn.com/thumbor/PLKDOgEwdQYplu1NWdsyKYehRCI=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19330110/dji_mavic_mini_drone_1418.jpg", email: "tommy@gmail.com", password: "123")
+User.create(name: "Kelly", bio: "DJI Mavic 2 Pro owner. Full time drone videographer. My favorite shots are at natural parks!", image: "https://cdn.vox-cdn.com/thumbor/b6LaeKVBzF5y8Z11VSnwb_4UjrM=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/7174623/dji-mavic-pro-drone-2445.0.jpg", email: "kelly@gmail.com", password: "123")
 
-FootageLog.create(name: "Burke Lake", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "Virginia", date: Date.new(2021, 1, 21), user_id: User.first.id)
-FootageLog.create(name: "Second Try", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "DC", date: Date.new(2022, 2, 22), user_id: User.first.id)
-FootageLog.create(name: "Third Try", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "Texas", date: Date.new(2023, 3, 23), user_id: User.first.id)
-FootageLog.create(name: "Fourth Try", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "California", date: Date.new(2024, 4, 24), user_id: User.first.id)
-FootageLog.create(name: "Fourth Try", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "California", date: Date.new(2024, 4, 24), user_id: User.first.id)
-FootageLog.create(name: "Fourth Try", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "California", date: Date.new(2024, 4, 24), user_id: User.first.id)
-FootageLog.create(name: "Fourth Try", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "California", date: Date.new(2024, 4, 24), user_id: User.first.id)
-FootageLog.create(name: "Fourth Try", image: "https://static.rootsrated.com/image/upload/s--s8KOEgTn--/t_rr_large_natural/rtuo8hxap892w3axda7z.jpg", location: "California", date: Date.new(2024, 4, 24), user_id: User.first.id)
+FootageLog.create(name: "Summer Trip to Burke Lake", image: "https://s3-media0.fl.yelpcdn.com/bphoto/Aiu-fAjow_Fo97sVDWqzIg/348s.jpg", location: "Virginia", date: Date.new(2018, 8, 21), user_id: User.first.id)
+FootageLog.create(name: "Old Rag Hike", image: "https://bloximages.newyork1.vip.townnews.com/breezejmu.org/content/tncms/assets/v3/editorial/a/6e/a6ea7fe2-a4d6-11e4-b512-2bc12bf80497/54c55bdfcb655.image.jpg", location: "Virginia", date: Date.new(2016, 2, 22), user_id: User.first.id)
+FootageLog.create(name: "Beach Trips", image: "https://img.travelawaits.com/filter:centercrop/quill/0/c/1/c/3/0/0c1c30926d3d061b22448720bdbcc6bc5f1822a2.jpg?w=800&h=800", location: "New Jersey", date: Date.new(2015, 10, 23), user_id: User.first.id)
+FootageLog.create(name: "Japan Footage", image: "https://cdn1.i-scmp.com/sites/default/files/topics/2017/09/26/620-japan.jpg", location: "Japan", date: Date.new(2024, 4, 12), user_id: User.first.id)
+FootageLog.create(name: "Family Trips", image: "https://cdn.vox-cdn.com/thumbor/nXkLTwTfALhEAQD8kmHE6gFpHSA=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19883896/San_Francisco_GettyImages_1145192321.jpg", location: "California", date: Date.new(2016, 9, 24), user_id: User.first.id)
+FootageLog.create(name: "Hawaii Beach Shots", image: "https://i.natgeofe.com/n/40f02b64-7726-4662-bd41-2d227442e7e3/aerial-seven-mile-miracle-north-shore-hawaii-aerial_square.jpg", location: "Hawaii", date: Date.new(2020, 8, 5), user_id: User.first.id)
+FootageLog.create(name: "Basketball Aerial Footage", image: "https://i.ebayimg.com/images/g/X5kAAOSwNRJcgoO8/s-l400.jpg", location: "Virginia", date: Date.new(2017, 5, 21), user_id: User.first.id)
+FootageLog.create(name: "Europe Trip", image: "https://www.thetrainline.com/cms/media/1360/france-eiffel-tower-paris.jpg?mode=crop&width=1080&height=1080&quality=70", location: "France", date: Date.new(2019, 10, 16), user_id: User.first.id)
 
 
 Video.create(url: "https://www.youtube.com/watch?v=Zo5aDMbn4io", description: "Trip to Alaska", footage_log_id: FootageLog.all.sample.id)

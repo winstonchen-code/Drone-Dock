@@ -5,7 +5,6 @@ import { Button } from '../ButtonElement'
 import ScrollToTop from '../ScrollToTop'
 
 
-
 const HeroSection = () => {
     const [hover, setHover] = useState(false)
 

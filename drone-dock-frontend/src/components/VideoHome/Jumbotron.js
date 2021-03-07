@@ -41,7 +41,7 @@ const Jumbotron = () => {
                             <Header>Featured Content</Header>
                             <Subhead>Access all of your drone footage here</Subhead>
                             <div className="cta-wrapper">
-                                <Button className="btn facy-btn"> Get Started </Button>
+                                <Button className="btn facy-btn"> Add Video </Button>
                             </div>
                         </div>
                     </div>

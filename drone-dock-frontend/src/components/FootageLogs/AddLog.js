@@ -10,7 +10,7 @@ const AddLog = ({ onAdd }) => {
     const onSubmit = (e) => {
         e.preventDefault()
         if (!name) {
-            alert('Please add a log')
+            alert('Please fill out the form')
             return 
         }
 

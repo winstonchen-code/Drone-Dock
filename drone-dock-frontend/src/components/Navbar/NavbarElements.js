@@ -119,7 +119,11 @@ export const NavBtnLink = styled(LinkR)`
 
 export const Nav1 = styled.div`
     border-radius: 50px;
-    background: blue;
+    background: linear-gradient(
+        108deg,
+        rgba(0, 119, 182, 1) 0%,
+        rgba(5, 130, 200, 1) 100%
+    );
     // background: #0609B1;
     white-space: nowrap;
     padding: 10px 22px;

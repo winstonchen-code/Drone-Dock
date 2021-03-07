@@ -31,10 +31,11 @@ class FootageLogsController < ApplicationController
     #     footage_log = FootageLog.find(params[:id])
     # end
 
-    # def update
-    #     footage_log = FootageLog.find(params[:id])
-    #     footage_log.update(footage_logs_params)
-    # end
+    def update
+        footage_log = FootageLog.find(params[:id])
+        footage_log.update(footage_logs_params)
+        render json: footage_log
+    end
 
     def destroy
         footage_log = FootageLog.find_by(id: params[:id])

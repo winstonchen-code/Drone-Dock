@@ -4,6 +4,9 @@ import Location from './FootageLog'
 import styled from 'styled-components'
 import AddLog from './AddLog'
 import ScrollToTop from '../ScrollToTop';
+import Entire from './Entire'
+import { useHistory } from "react-router-dom"
+
 
 const Home = styled.div`
     text-align: center;
@@ -17,10 +20,11 @@ const Header = styled.div`
     h1 {
         font-size: 42px;
     }
+    
     background: linear-gradient(
         108deg,
-        rgba(0, 119, 182, 1) 0%,
-        rgba(5, 160, 200, 1) 100%
+        rgba(2, 160, 260, 1) 0%,
+        rgba(5, 200, 320, 1) 100%
     );
 `
 const Subheader = styled.div`
@@ -73,6 +77,7 @@ const Button = styled.a`
 
 function FootageLogs( {user, footageLogs, setFootageLogs} ) {
     const [showForm, setShowForm] = useState(false) 
+    const history = useHistory()
 
     const onClick = () => {
         console.log('Click')
@@ -98,6 +103,7 @@ function FootageLogs( {user, footageLogs, setFootageLogs} ) {
             .then(footageLog => {
                 // setUser({...user, footage_logs: [...user.footage_logs, footagelog]});
                 setFootageLogs([...footageLogs, footageLog])
+                history.push("/footagelogs");
             })
     }
 
@@ -125,11 +131,16 @@ function FootageLogs( {user, footageLogs, setFootageLogs} ) {
             </div> */}
 
 
-            <Header1>Hello {user.name}!</Header1>
-            <Subheader> Check Out Your Footage Logs </Subheader>
-            <Btn onClick={() => setShowForm(!showForm)}> Create New Log </Btn>
-            {showForm && <AddLog onAdd={addLog} />}
+            <Header1>Hello {user.name},</Header1>
+            <Subheader> Check out all of your drone logs here! </Subheader>
+            {/* <Btn onClick={() => setShowForm(!showForm)}> Create New Log </Btn> */}
+            {/* {showForm && <AddLog onAdd={addLog} />} */}
+            <Entire onAdd={addLog}></Entire>
         </Header>
+        <br></br>
+        <br></br>
+        <h2>Your Drone Logs</h2>
+        <br></br>
         <Grid>
             {grid}
         </Grid>

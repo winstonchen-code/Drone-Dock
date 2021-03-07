@@ -1,25 +1,38 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { Modal } from './EditModal/Modal'
 
 const Card = styled.div`
-    // border: 5px solid #efefef;
-    border: 3px solid black;
-    background: #fff;
-    border-radius: 5%;
+    border: 1px solid #efefef;
+    // border: 1px solid black;
+    background: linear-gradient(
+        108deg,
+        rgba(0, 80, 202, 1) 0%,
+        rgba(5, 100, 250, 1) 100%
+    );
+    border-radius: 0%;
 `
 const LocationImage = styled.div`
     padding-top: 10px;
     padding-bottom: 10px;
     img{
-        height: 200px;
-        width: 200px;
-        border-radius: 100%;
-        border: 5px solid #efefef;
+        height: 150px;
+        width: 150px;
+        // border-radius: 100%;
+        border: 1px solid #efefef;
     }
 `
+const LocationCity1 = styled.div`
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+    padding: 0px 0 0px 0;
+`
 const LocationCity = styled.div`
-    padding: 0px 0 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0px 0 0px 0;
 `
 
 const LinkWrapper = styled.div`
@@ -60,15 +73,21 @@ const Btn = styled.div`
     text-decoration: none;
     font-size: 15px;
     font-family: inherit;
+
 `
 
 function FootageLog(props) {
+    const [showModal, setShowModal] = useState(false)
+    const openModal = () => {
+        setShowModal(prev => !prev)
+    }
+
     return (
         <Card>
             <LocationImage>
                 <img src={props.item.image} alt={props.item.name}/>
             </LocationImage>
-            <LocationCity>{props.item.name} </LocationCity>
+            <LocationCity1>{props.item.name} </LocationCity1>
             <LocationCity>{props.item.location} </LocationCity>
             <LocationCity>{props.item.date} </LocationCity>
             {/* <Rating score={props.item.avg_score}/> */}
@@ -76,9 +95,10 @@ function FootageLog(props) {
             <LinkWrapper>
                 <Link to={`/footagelogs/${props.item.id}`}>View Log</Link>
             </LinkWrapper>
-            <Btn type='submit'>
+            <Btn onClick={openModal}>
                 Edit
             </Btn>
+            <Modal showModal={showModal} setShowModal={setShowModal} item={props.item} />
             <Btn onClick={() => props.deleteLog(props.item.id)}>
                 Delete
             </Btn>
