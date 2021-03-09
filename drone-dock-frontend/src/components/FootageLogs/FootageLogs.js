@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Location from './FootageLog'
+import FootageLog from './FootageLog'
 import styled from 'styled-components'
 import AddLog from './AddLog'
 import ScrollToTop from '../ScrollToTop';
@@ -59,25 +59,33 @@ const Header1 = styled.h1`
     line-height: 52px;
 `
 
-const Subhead = styled.p`
-    font-size: 18px;
-    font-weight: 500;
-`
+// const Subhead = styled.p`
+//     font-size: 18px;
+//     font-weight: 500;
+// `
 
-const Button = styled.a`
-    display: inline-block;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 0;
-    background: #fff;
-    padding: 10px 20px;
-    font-size: 18px;
+// const Button = styled.a`
+//     display: inline-block;
+//     text-decoration: none;
+//     font-weight: bold;
+//     cursor: pointer;
+//     border-radius: 0;
+//     background: #fff;
+//     padding: 10px 20px;
+//     font-size: 18px;
+// `
+
+const Search = styled.input`
+    padding: 10px 30px;
+    margin-bottom: 0px;
+    border: solid;
+    border-radius: 8px;
 `
 
 function FootageLogs( {user, footageLogs, setFootageLogs} ) {
     const [showForm, setShowForm] = useState(false) 
     const history = useHistory()
+    const [searchTerm, setSearchTerm] = useState('')
 
     const onClick = () => {
         console.log('Click')
@@ -113,8 +121,18 @@ function FootageLogs( {user, footageLogs, setFootageLogs} ) {
         setFootageLogs(newLogs)
     }
 
-    const grid = footageLogs.map( item => {
-        return (<Location key={item.id} item={item} deleteLog={deleteLog} > </Location>)
+    // const grid = footageLogs.map( item => {
+    //     return (<Location key={item.id} item={item} deleteLog={deleteLog} > </Location>)
+    // })
+    
+    const grid = footageLogs.filter(val => {
+        if (searchTerm == "") {
+            return val
+        } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())){
+            return val
+        }
+    }).map( item => {
+        return (<FootageLog key={item.id} item={item} deleteLog={deleteLog} footageLogs={footageLogs} setFootageLogs={setFootageLogs} > </FootageLog>)
     })
 
     return (
@@ -140,6 +158,9 @@ function FootageLogs( {user, footageLogs, setFootageLogs} ) {
         <br></br>
         <br></br>
         <h2>Your Drone Logs</h2>
+            <div>
+                <Search type="text" placeholder="Search..." onChange={event => {setSearchTerm(event.target.value)}} />
+            </div>
         <br></br>
         <Grid>
             {grid}

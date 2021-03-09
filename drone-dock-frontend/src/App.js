@@ -19,6 +19,7 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+    if (token !== null) {
     fetch("http://localhost:3000/me", {
       headers: {
         "Content-Type": "application/json",
@@ -27,10 +28,11 @@ function App() {
     })
       .then((r) => r.json())
       .then((user) => {
+        console.log(user)
         setUser(user);
         setFootageLogs(user.footage_logs)
       })
-  }, []);
+  }}, []);
 
   return (
     <Router>

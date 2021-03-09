@@ -25,7 +25,7 @@ const Item = (props) => {
                             </div>
                             <div className="col-md-8">
                                 <div className="pt-4 pb-4">
-                                    <h4>{props.url}</h4>
+                                    <h4>{props.title}</h4>
                                     <p>{props.description}</p>
                                     <div className="cta-wrapper">
                                         <Button onClick={props.handleVideoChange} className="btn cta-btn">Watch this video</Button>

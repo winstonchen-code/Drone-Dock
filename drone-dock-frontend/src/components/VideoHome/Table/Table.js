@@ -9,11 +9,12 @@ class Table extends Component {
     render(){
         const items = this.props.videos.map ( (data) => {
             // let handleVideoChange = this.props.handleVideoChange.bind(this, data)
+            let handleVideoChange = this.props.handleVideoChange.bind(this, data)
 
             return (
                 data.active ?
-                <ActiveItem key={data.id} url={data.url} description={data.description} /> :
-                <Item key={data.id} url={data.url} description={data.description} />
+                <ActiveItem handleVideoChange={handleVideoChange} key={data.id} url={data.url} description={data.description} title={data.title} /> :
+                <Item handleVideoChange={handleVideoChange} key={data.id} url={data.url} description={data.description} title={data.title} />
             )
         })
 

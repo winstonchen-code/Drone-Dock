@@ -129,6 +129,7 @@ export const Modal = ({ showModal, setShowModal, onAdd }) => {
         setImage('')
         setLocation('')
         setDate('')
+        setShowModal (prev => !prev)
     }
 
     return (

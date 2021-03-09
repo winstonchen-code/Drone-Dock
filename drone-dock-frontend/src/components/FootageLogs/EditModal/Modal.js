@@ -112,7 +112,7 @@ const FormButton = styled.button`
     cursor: pointer;
 `
 
-export const Modal = ({ showModal, setShowModal, item }) => {
+export const Modal = ({ showModal, setShowModal, item, footageLogs, setFootageLogs }) => {
     const [formData, setFormData] = useState({
         name: item.name,
         image: item.image,
@@ -136,9 +136,12 @@ export const Modal = ({ showModal, setShowModal, item }) => {
             body: JSON.stringify(formData),
         })
             .then(r => r.json())
-            .then(user => {
-                // setUser(user);
+            .then(edittedLog => {
+                let newArray = footageLogs.map(log => log.id === edittedLog.id ? log = edittedLog : log)
+                // console.log(newArray)
 
+                setFootageLogs(newArray)
+                setShowModal (prev => !prev)
             })
     }
 
@@ -150,15 +153,15 @@ export const Modal = ({ showModal, setShowModal, item }) => {
                     <ModalImg src={require('./modal1.jpg').default} />
                     <Form onSubmit={handleSubmit} >
                             <FormLabel>Name</FormLabel>
-                            <FormInput type='text' placeholder='Add Name' value={formData.name} onChange={handleChange} />            
+                            <FormInput type='text' placeholder='Add Name' name="name" value={formData.name} onChange={handleChange} />            
                             <FormLabel>Image</FormLabel>
-                            <FormInput type='text' placeholder='Add Image' value={formData.image} onChange={handleChange} />            
+                            <FormInput type='text' placeholder='Add Image' name="image" value={formData.image} onChange={handleChange} />            
                         
                             <FormLabel>Location</FormLabel>
-                            <FormInput type='text' placeholder='Add Location' value={formData.location} onChange={handleChange} />            
+                            <FormInput type='text' placeholder='Add Location' name="location" value={formData.location} onChange={handleChange} />            
                             <FormLabel>Date</FormLabel>
-                            <FormInput type='date' value={formData.date} onChange={handleChange} />            
-                            <FormButton type='submit'>Edit Log</FormButton>
+                            <FormInput type='date' value={formData.date} name="date" onChange={handleChange} />            
+                            <FormButton type='submit' >Edit Log</FormButton>
                     </Form>
                     <CloseModalButton aria-label='Close modal' onClick={() => setShowModal (prev => !prev)} />
                 </ModalWrapper>

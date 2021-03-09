@@ -98,7 +98,7 @@ function FootageLog(props) {
             <Btn onClick={openModal}>
                 Edit
             </Btn>
-            <Modal showModal={showModal} setShowModal={setShowModal} item={props.item} />
+            <Modal showModal={showModal} setShowModal={setShowModal} item={props.item} footageLogs={props.footageLogs} setFootageLogs={props.setFootageLogs} />
             <Btn onClick={() => props.deleteLog(props.item.id)}>
                 Delete
             </Btn>
