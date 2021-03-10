@@ -30,6 +30,9 @@ const Navbar = ({ toggle, user, setUser }) => {
                             <NavItem>
                                 <NavLinks to="/footagelogs">Portfolio</NavLinks>
                             </NavItem>
+                            <NavItem>
+                                <NavLinks to="/tracker">Tracker</NavLinks>
+                            </NavItem>
                             </>
                         ) : (
                             <>

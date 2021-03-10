@@ -11,7 +11,7 @@ const Footer = () => {
                     <FooterLinksWrapper>
                         <FooterLinkItems>
                             <FooterLinkTitle>About Us</FooterLinkTitle>
-                                <FooterLink to="/signin">How it works</FooterLink>
+                                <FooterLink to="/about">Our Mission</FooterLink>
                                 <FooterLink to="/signin">Testimonials</FooterLink>
                                 <FooterLink to="/signin">Careers</FooterLink>
                                 <FooterLink to="/signin">Investors</FooterLink>

@@ -10,7 +10,10 @@ import Profile from './components/Profile/Profile';
 import FootageLogs from './components/FootageLogs/FootageLogs';
 import Footer from './components/Footer';
 import Signup from './Signup/Signup'
+import Tracker from './Tracker/Tracker'
+import About from './About/About'
 import Discover from './Discover/Discover'
+import { InfoData } from './About/InfoData'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -45,6 +48,12 @@ function App() {
           </Route>
           <Route path="/signup">
             <Signup setUser={setUser} setFootageLogs={setFootageLogs} /> 
+          </Route>
+          <Route path="/tracker">
+            <Tracker/> 
+          </Route>
+          <Route path="/about">
+            <About {...InfoData}/> 
           </Route>
           <Route path="/discover">
             <Discover/> 

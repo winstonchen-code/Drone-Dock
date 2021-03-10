@@ -1,11 +1,19 @@
+import Jumbotron from'./Jumbotron'
+import JumbotronOne from'./JumbotronOne'
+import JumbotronTwo from'./JumbotronTwo'
 import React from 'react'
+import ScrollToTop from '../components/ScrollToTop';
 
-function Discover() {
+function Home() {
+
     return (
         <div>
-            <h1>Hello</h1>
+            <ScrollToTop />
+            <Jumbotron/>
+            <JumbotronOne/>
+            <JumbotronTwo/>
         </div>
     )
 }
 
-export default Discover
+export default Home
