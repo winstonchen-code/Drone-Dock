@@ -1,5 +1,8 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
+import { Modal } from './Modal/Modal'
+
 
 const Section = styled.section`
     background-color: #00B4D8;
@@ -32,6 +35,15 @@ const Button = styled.a`
 `
 
 const Jumbotron = () => {
+
+    const [showModal, setShowModal] = useState(false)
+    const openModal = () => {
+        setShowModal(prev => !prev)
+    }
+
+    const addLog = (log) => {
+        console.log(log)
+    }
     return (
         <Section className="home-section--1">
             <div className="container">
@@ -41,7 +53,8 @@ const Jumbotron = () => {
                             <Header>Featured Content</Header>
                             <Subhead>Access all of your drone footage here</Subhead>
                             <div className="cta-wrapper">
-                                <Button className="btn facy-btn"> Add Video </Button>
+                                <Button className="btn facy-btn" onClick={openModal}> Add Video </Button>
+                                <Modal onAdd={addLog} showModal={showModal} setShowModal={setShowModal} />
                             </div>
                         </div>
                     </div>

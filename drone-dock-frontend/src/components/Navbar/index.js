@@ -37,7 +37,7 @@ const Navbar = ({ toggle, user, setUser }) => {
                                 <NavLinks to="about">About</NavLinks>
                             </NavItem>
                             <NavItem>
-                                <NavLinks to="/profile">Discover</NavLinks>
+                                <NavLinks to="/discover">Discover</NavLinks>
                             </NavItem>
                             <NavItem>
                                 <NavLinks to="signup">Sign Up</NavLinks>

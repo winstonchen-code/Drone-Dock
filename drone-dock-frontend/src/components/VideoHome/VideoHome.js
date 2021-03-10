@@ -39,11 +39,19 @@ function Home(props) {
         [],
     );
 
+    const deleteVideo = (id) => {
+        fetch(`http://localhost:3000/videos/${id}`, {method: "DELETE"})
+        let newVideos = videos.filter(videos => videos.id !== id)
+        setVideos(newVideos)
+        alert("Your video has been deleted!")
+        console.log(id)
+    }
+
     return (
         <div>
             <ScrollToTop />
             <Jumbotron/>
-            <Table handleVideoChange={handleVideoChange} videos={videos} />
+            <Table handleVideoChange={handleVideoChange} videos={videos} deleteVideo={deleteVideo} />
         </div>
     )
 }

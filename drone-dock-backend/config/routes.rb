@@ -13,5 +13,9 @@ Rails.application.routes.draw do
   patch "/footage_logs/:id", to: "footage_logs#update"
   delete '/footage_logs/:id', to: 'footage_logs#destroy'
 
+  get '/videos/:id', to: 'videos#show'
+  delete '/videos/:id', to: 'videos#destroy'
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -10,6 +10,7 @@ import Profile from './components/Profile/Profile';
 import FootageLogs from './components/FootageLogs/FootageLogs';
 import Footer from './components/Footer';
 import Signup from './Signup/Signup'
+import Discover from './Discover/Discover'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -44,6 +45,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <Signup setUser={setUser} setFootageLogs={setFootageLogs} /> 
+          </Route>
+          <Route path="/discover">
+            <Discover/> 
           </Route>
           {/* <Route path="/signin" component={SigninPage} exact /> */}
 
